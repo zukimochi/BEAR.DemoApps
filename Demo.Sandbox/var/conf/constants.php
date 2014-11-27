@@ -24,6 +24,7 @@ return [
         // optional
         'master_db' => $masterDb,
         'slave_db' => $slaveDb,
+        'cache_namespace' => 'Demo/Sandbox-prod',
     ],
     'dev' => [],
     'api' => [],
