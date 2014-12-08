@@ -20,5 +20,8 @@ class Dependency extends AbstractModule
         // application bindings
         $this->bind()->annotatedWith('greeting_msg')->toInstance('Hola');
         $this->bind('BEAR\Resource\RenderInterface')->annotatedWith('hal')->to('BEAR\Package\Provide\ResourceView\HalRenderer')->in(Scope::SINGLETON);
+
+        $this->bind('BEAR\Package\Provide\Router\Adapter\AdapterInterface')->annotatedWith('aura_router')->toProvider('Demo\Sandbox\Provide\Router\Adapter\AuraRouterProvider');
+        $this->bind('BEAR\Package\Provide\Router\Adapter\AdapterInterface')->annotatedWith('web_router')->to('BEAR\Package\Provide\Router\Adapter\WebRouter');
     }
 }

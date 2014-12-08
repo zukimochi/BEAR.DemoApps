@@ -34,6 +34,7 @@ class AppModule extends AbstractModule
      */
     protected function configure()
     {
+        $this->install(new RouterCollectionModule);
         $this->install(new StandardPackageModule('Demo\Sandbox', $this->context, dirname(dirname(__DIR__))));
 
         // override view package (default:Twig)
