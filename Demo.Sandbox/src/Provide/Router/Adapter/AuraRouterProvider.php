@@ -30,13 +30,16 @@ class AuraRouterProvider implements ProviderInterface
      */
     public function get()
     {
-        $this->addBlogRoutes();
+        $this->addHelloRoutes();
         $auraRouter = new AuraRouter($this->router);
 
         return $auraRouter;
     }
 
-    public function addBlogRoutes()
+    /**
+     * @return void
+     */
+    public function addHelloRoutes()
     {
         $this->router->add(null, '/hello/world/{name}')
             ->addTokens(['name' => '[a-zA-Z]+'])
